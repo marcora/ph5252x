@@ -16,9 +16,9 @@ levels(dat$Diet) # => "chow", "hf"
 
 X = model.matrix(~ Diet, data=dat)
 
-X
-
 colnames(X)
+nrow(X)
+head(X)
 
 # solve the linear model
 
@@ -53,6 +53,6 @@ abline(h=coefs[1], col=cols[1])
 arrows(1-offset,0, 1-offset, coefs[1], col=cols[1], length = 0.1)
 
 abline(h=coefs[1] + coefs[2], col=cols[2])
-arrows(2+offset,coefs[1], 2+offset, coefs[1]+coefs[2], col=cols[2], length = 0.1)
+arrows(2-offset, coefs[1], 2-offset, coefs[1]+coefs[2], col=cols[2], length = 0.1)
 
-legend("topright", names(coeffs), fill=cols)
+legend("topright", names(coefs), fill=cols)
