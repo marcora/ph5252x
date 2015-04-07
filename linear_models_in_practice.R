@@ -15,10 +15,9 @@ levels(dat$Diet) # => "chow", "hf"
 # dat$Diet = relevel(dat$Diet, ref="hf")
 
 X = model.matrix(~ Diet, data=dat)
-
 colnames(X)
 nrow(X)
-head(X)
+X
 
 # solve the linear model
 
